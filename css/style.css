@@ -1,0 +1,22 @@
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+hr {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+ol {
+    width: 200px;
+    font-weight: bold;
+}

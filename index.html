@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue-mail-list</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+
     <!-- Custom style -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -21,15 +23,24 @@
 
         <div class="input">
             <label for="gen-email">Quante e-mail vuoi generare ?</label>
-            <input type="number" id="gen-email" v-model="inputNumberOfEmail">
+            <input type="number" id="gen-email" v-model="inputNumberOfEmail" @keyup.enter="generateRndMail">
         </div>
         <button @click="generateRndMail">Genera</button>
 
-        <h2>Queste sono le tue e-mail generate</h2>
-        <ol v-if="arrayEmail.length == numberOfEmail">
-            <li v-for="email in arrayEmail">{{ email }}</li>
-        </ol>
-
+        <div v-if="arrayEmail.length === numberOfEmail">
+            <h2>Queste sono le tue e-mail generate</h2>
+            <ol>
+                <li v-for="(email, i) in arrayEmail" :key="i">{{ email }}</li>
+            </ol>
+        </div>
+        <div class="is-loading" v-if="isLoading">
+            <p>STIAMO CARICANDO LE TUE E-MAILS</p>
+            <div class="col-xs-12">
+                <div class="well">
+                    <i class="ex-10-icon fas fa-circle-notch"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Axios CDN -->

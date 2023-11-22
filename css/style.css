@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: lightgrey;
+    margin-top: 3rem;
 }
 
 .input {
@@ -19,4 +21,47 @@ hr {
 ol {
     width: 200px;
     font-weight: bold;
+}
+
+button {
+    margin-bottom: 2rem;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+p {
+    font-weight: bolder;
+    color: darkred;
+    font-size: 1.5rem;
+}
+
+.is-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem
+}
+
+.ex-10-icon {
+    font-size: 60px;
+    animation: rotation 1s linear infinite reverse;
+    color: darkred;
+    margin-bottom: 1rem;
+}
+
+@keyframes rotation {
+    25% {
+        transform: rotate(90deg)
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
